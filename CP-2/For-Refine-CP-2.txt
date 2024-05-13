@@ -1,0 +1,124 @@
+# Load required library
+library(ggplot2)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Create datasets for each distribution shape
+# Bimodal distribution
+bimodal_data <- c(rnorm(1000, mean = -2, sd = 1), rnorm(1000, mean = 2, sd = 1))
+
+# Comb distribution
+comb_data <- c(runif(1000, min = -3, max = -2), runif(1000, min = 1, max = 2))
+
+# Edge peak distribution
+edge_peak_data <- c(rexp(1000, rate = 1), rexp(1000, rate = 2))
+
+# Normal distribution
+normal_data <- rnorm(2000)
+
+# Skewed distribution
+skewed_data <- c(rnorm(1000), rnorm(1000, mean = 4, sd = 1))
+
+# Uniform distribution
+uniform_data <- runif(2000)
+
+# Plot distributions
+# Bimodal distribution
+ggplot(data.frame(x = bimodal_data), aes(x)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram - Bimodal") +
+  theme_minimal()
+
+ggplot(data.frame(x = bimodal_data), aes(x)) +
+  geom_density(fill = "skyblue", color = "black") +
+  labs(title = "Density Plot - Bimodal") +
+  theme_minimal()
+
+# Comb distribution
+ggplot(data.frame(x = comb_data), aes(x)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram - Comb") +
+  theme_minimal()
+
+ggplot(data.frame(x = comb_data), aes(x)) +
+  geom_density(fill = "skyblue", color = "black") +
+  labs(title = "Density Plot - Comb") +
+  theme_minimal()
+
+# Edge peak distribution
+ggplot(data.frame(x = edge_peak_data), aes(x)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram - Edge Peak") +
+  theme_minimal()
+
+ggplot(data.frame(x = edge_peak_data), aes(x)) +
+  geom_density(fill = "skyblue", color = "black") +
+  labs(title = "Density Plot - Edge Peak") +
+  theme_minimal()
+
+# Normal distribution
+ggplot(data.frame(x = normal_data), aes(x)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram - Normal") +
+  theme_minimal()
+
+ggplot(data.frame(x = normal_data), aes(x)) +
+  geom_density(fill = "skyblue", color = "black") +
+  labs(title = "Density Plot - Normal") +
+  theme_minimal()
+
+# Skewed distribution
+ggplot(data.frame(x = skewed_data), aes(x)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram - Skewed") +
+  theme_minimal()
+
+ggplot(data.frame(x = skewed_data), aes(x)) +
+  geom_density(fill = "skyblue", color = "black") +
+  labs(title = "Density Plot - Skewed") +
+  theme_minimal()
+
+# Uniform distribution
+ggplot(data.frame(x = uniform_data), aes(x)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram - Uniform") +
+  theme_minimal()
+
+ggplot(data.frame(x = uniform_data), aes(x)) +
+  geom_density(fill = "skyblue", color = "black") +
+  labs(title = "Density Plot - Uniform") +
+  theme_minimal()
+
+# Display plots
+#grid.arrange(p_bimodal_hist, p_comb_hist, p_edge_peak_hist, p_normal_hist, p_skewed_hist, p_uniform_hist, nrow = 2)
+#grid.arrange(p_bimodal_density, p_comb_density, p_edge_peak_density, p_normal_density, p_skewed_density, p_uniform_density, nrow = 2)
+# Task 2
+
+# Generate random data
+set.seed(123)
+data <- rnorm(1000)
+
+# Load required library
+library(ggplot2)
+
+# Plot histogram with default bin width
+ggplot(data.frame(x = data), aes(x)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram with Default Bin Width") +
+  theme_minimal()
+
+# Plot histogram with smaller bin width
+ggplot(data.frame(x = data), aes(x)) +
+  geom_histogram(bins = 50, fill = "lightgreen", color = "black", alpha = 0.7) +
+  labs(title = "Histogram with Smaller Bin Width") +
+  theme_minimal()
+
+# Plot histogram with larger bin width
+ggplot(data.frame(x = data), aes(x)) +
+  geom_histogram(bins = 20, fill = "salmon", color = "black", alpha = 0.7) +
+  labs(title = "Histogram with Larger Bin Width") +
+  theme_minimal()
+
+
+
